@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/vkakde/autoDP/issues"
   },
-  "homepage": "https://github.com/vkakde/autoDP#readme"
+  "homepage": "https://github.com/vkakde/autoDP#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.4"
+  }
 }
