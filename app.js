@@ -9,7 +9,7 @@ var app = express()
 axios({
     url: 'https://interview.adpeai.com/api/v1/get-task',
     method: 'get',
-  }).then((results) => {
+  }).then((results, err) => {
       // break result down by body
       let Id = results.data.id;
       let left = results.data.left;
@@ -17,7 +17,7 @@ axios({
       let operation = results.data.operation
       let Result = 0
 
-      // perform operation  
+      // perform math operation  
       switch(operation) {
         case "addition": Result = left+right
                          break;
@@ -37,7 +37,7 @@ axios({
               id: Id,
               result: Result
           }
-      }).then((results) => {
+      }).then((results, err) => {
           console.log("\nResult status: " + results.statusText);
           console.log("\nResult data: " + results.data);
       })
