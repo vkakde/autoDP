@@ -1,9 +1,5 @@
 // ext dependencies
 var axios = require("axios")
-var express = require("express")
-
-// create express app
-var app = express()
 
 // get request 
 axios({
@@ -28,7 +24,7 @@ axios({
         case "division": Result = left/right
                             break;
       }
-
+      
       // post result
       axios({
           url: "https://interview.adpeai.com/api/v1/submit-task",
@@ -38,7 +34,8 @@ axios({
               result: Result
           }
       }).then((results, err) => {
+          // log response from post request
           console.log("\nResult status: " + results.statusText);
           console.log("\nResult data: " + results.data);
-      })
-});
+        })
+})
